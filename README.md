@@ -9,7 +9,7 @@ After setting the MX server IP for world.com,
 sudo docker run -p 25:25 -p 587:587 --name email-forward-container winm2m/email-forward
 ```
 
-# Confiture mappings
+# Configure mappings
 ## 1. /etc/forwarding/mapping.conf
 After writing from to in each line of the /etc/forwarding/mapping.conf file, execute rebuild_map
 ```sh
