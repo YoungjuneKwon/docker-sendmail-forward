@@ -6,8 +6,9 @@ Configure incoming emails to hello@world.com to be forwarded to to@my-host.org
 
 After setting the MX server IP for world.com,
 ```
-sudo docker run -p 25:25 -p 587:587 --name email-forward-container winm2m/email-forward
+sudo docker run --hostname=world.com -p 25:25 -p 587:587 --name email-forward-container winm2m/email-forward
 ```
+> **_NOTE:_** The "hostname" value must be specified as the same value as the host value of the e-mail to be forwarded.
 
 # Configure mappings
 ## 1. /etc/forwarding/mapping.conf
