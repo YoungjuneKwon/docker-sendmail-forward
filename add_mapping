@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ ! $2 ]; then
+    echo "Usage: $0 <from> <to>"
+    exit 1
+fi
+
+FROM=$1
+TO=$2
+
+echo "Adding $FROM to $TO"
+useradd -s /sbin/nologin -d /home/$FROM -m $FROM
+echo $TO > /home/$FROM/.forward
+chown $FROM:$FROM /home/$FROM/.forward
+chmod 600 /home/$FROM/.forward

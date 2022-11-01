@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  email-forward:
+    image: winm2m/email-forward
+    hostname: from.host.addr
+    environment:
+      - EMAIL_MAPPINGS=from:to@yourhost.com
+    ports:
+      - target: 25
+        published: 25
+        protocol: tcp
+        mode: host
+      - target: 587
+        published: 587
+        protocol: tcp
+        mode: host
